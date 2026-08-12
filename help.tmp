@@ -1,2 +1,50 @@
-{ "help": true, "level": "assist", "fix": true }
+{
+  "help": true,
+  "level": "assist",
+  "fix": true,
 
+  "nc": {
+    "operator": "C",
+    "mode": "cycle",
+    "value": 2,
+    "net": "enabled",
+    "link": "direct",
+    "continuum": "spo"
+  },
+
+  "slide": {
+    "enabled": true,
+    "factor": 1.5
+  },
+
+  "wette": {
+    "enabled": true,
+    "factor": 2.0
+  },
+
+  "score": {
+    "base": 81,
+    "multiplier": 3,
+    "optimum": "Φ∞"
+  },
+
+  "vector": {
+    "axis": true,
+    "color": true,
+    "percent": true,
+    "degree": true,
+    "rotation": true
+  },
+
+  "geo": {
+    "alpha": true,
+    "beta": true,
+    "gamma": true,
+    "delta": true
+  },
+
+  "gamma": {
+    "value": true,
+    "precision": true
+  }
+}
