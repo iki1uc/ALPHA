@@ -1,0 +1,8 @@
+{
+  "id": "ort.tmp",
+  "scope": "local",
+  "dim": "γ∞",
+  "eco": true,
+  "context": "location",
+  "level": 3
+}
