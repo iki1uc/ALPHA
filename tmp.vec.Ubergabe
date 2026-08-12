@@ -1,35 +1,28 @@
-// tmp.vec.Übergabe
-import { TMP_VEC_ROTATION } from "./tmp3.vec.rotation";
+import CYCLE from "./c.tmp";
 
-export const TMP_VEC_UEBERGABE = {
-  id: "tmp.vec.Übergabe",
-  mode: "alpha-beta-gamma-transfer",
-  status: "active",
+export const NC_ENGINE = {
+  id: "nc.engine",
+  operator: CYCLE.operator,   // "C"
+  mode: CYCLE.mode,           // "cycle"
+  value: CYCLE.value,         // 2
 
-  transfer(entry) {
-    const rot = TMP_VEC_ROTATION.rotation(entry);
+  // NET / LINK / DIRECT / SPO
+  net: "enabled",
+  link: "direct",
+  direct: true,
+  spo: "continuum",
 
-    return {
-      entry,
-      vector: rot.vector,
-      axis: rot.axis,
-      respo: rot.respo,
-      color: rot.color,
-      percent: rot.percent,
-      degree: rot.degree,
-      rotation: rot.rotation,
+  // SLIDE / WETTE
+  slide(entry) {
+    return entry.includes("slide") ? 1.5 : 1.0;
+  },
 
-      // Übergabe an BETA
-      beta_geo: {
-        alpha: rot.percent === "100%" ? 12 : 6,
-        beta: rot.degree === "360°" ? 4 : 2,
-        gamma: rot.rotation === "360°" ? 7 : 3,
-        delta: rot.respo === "OK" ? 1 : 0
-      },
+  wette(entry) {
+    return entry.includes("wette") ? 2.0 : 1.0;
+  },
 
-      // Übergabe an GAMMA
-      gamma_value: rot.percent === "100%" ? 9 : 4
-    };
+  // Gesamtfaktor
+  factor(entry) {
+    return this.value * this.slide(entry) * this.wette(entry);
   }
 };
-
