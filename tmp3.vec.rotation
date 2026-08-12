@@ -1,9 +1,9 @@
-export const TMP_VEC_ROT = {
-  id: "tmp3.vec.rumHErum",
-  mode: "alpha-vec-rot",
+export const TMP_VEC_ROTATION = {
+  id: "tmp3.vec.rotation",
+  mode: "alpha-vec-rotation",
   status: "active",
 
-  rotate(entry) {
+  rotation(entry) {
     return {
       entry,
       vector: this.vector(entry),
@@ -12,8 +12,8 @@ export const TMP_VEC_ROT = {
       color: this.color(entry),
       percent: this.percent(entry),
       degree: this.degree(entry),
-      rotation: this.rotation(entry),
-      rumHERum: true
+      rotation: this.spin(entry),
+      rotated: true
     };
   },
 
@@ -58,7 +58,7 @@ export const TMP_VEC_ROT = {
     return entry.includes("rotation") ? "360°" : "180°";
   },
 
-  rotation(entry) {
+  spin(entry) {
     if (entry.includes("rum")) return "rumHERum";
     if (entry.includes("kreis")) return "360°";
     return "180°";
