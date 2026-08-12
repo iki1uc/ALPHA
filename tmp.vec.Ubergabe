@@ -1,0 +1,35 @@
+// tmp.vec.Übergabe
+import { TMP_VEC_ROTATION } from "./tmp3.vec.rotation";
+
+export const TMP_VEC_UEBERGABE = {
+  id: "tmp.vec.Übergabe",
+  mode: "alpha-beta-gamma-transfer",
+  status: "active",
+
+  transfer(entry) {
+    const rot = TMP_VEC_ROTATION.rotation(entry);
+
+    return {
+      entry,
+      vector: rot.vector,
+      axis: rot.axis,
+      respo: rot.respo,
+      color: rot.color,
+      percent: rot.percent,
+      degree: rot.degree,
+      rotation: rot.rotation,
+
+      // Übergabe an BETA
+      beta_geo: {
+        alpha: rot.percent === "100%" ? 12 : 6,
+        beta: rot.degree === "360°" ? 4 : 2,
+        gamma: rot.rotation === "360°" ? 7 : 3,
+        delta: rot.respo === "OK" ? 1 : 0
+      },
+
+      // Übergabe an GAMMA
+      gamma_value: rot.percent === "100%" ? 9 : 4
+    };
+  }
+};
+
