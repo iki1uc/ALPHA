@@ -1,2 +1,4 @@
-{ "operator": "X", "mode": "switch", "value": 1 }
-
+alpha: rot.percent === "100%" ? 12 : 6,
+beta: rot.degree === "360°" ? 4 : 2,
+gamma: rot.rotation === "360°" ? 7 : 3,
+delta: rot.respo === "OK" ? 1 : 0
