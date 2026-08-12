@@ -64,3 +64,10 @@ export const TMP_VEC_ROTATION = {
     return "180°";
   }
 };
+vector(entry) {
+  if (entry.includes("uni")) return "VEC-UNI";
+  if (entry.includes("welt")) return "VEC-WELT";
+  if (entry.includes("ort")) return "VEC-ORT";
+  if (entry.includes("home")) return "VEC-HOME";
+  ...
+}
