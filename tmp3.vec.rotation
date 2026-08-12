@@ -71,3 +71,14 @@ vector(entry) {
   if (entry.includes("home")) return "VEC-HOME";
   ...
 }
+axis(entry) {
+  if (entry.includes("uni")) return "U";
+  if (entry.includes("welt")) return "W";
+  if (entry.includes("ort")) return "O";
+  if (entry.includes("home")) return "H";
+  ...
+}
+if (entry.includes("uni")) factor *= 3;
+if (entry.includes("welt")) factor *= 2;
+if (entry.includes("ort")) factor *= 1.5;
+if (entry.includes("home")) factor *= 1.2;
