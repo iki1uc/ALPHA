@@ -1,2 +1,24 @@
-{ "operator": "C", "mode": "cycle", "value": 2 }
+{
+  "operator": "C",
+  "mode": "cycle",
+  "value": 2,
 
+  "net": "enabled",
+  "link": "direct",
+  "continuum": "spo",
+
+  "slide": {
+    "enabled": true,
+    "factor": 1.5
+  },
+
+  "wette": {
+    "enabled": true,
+    "factor": 2.0
+  },
+
+  "score": {
+    "base": 81,
+    "multiplier": 3
+  }
+}
